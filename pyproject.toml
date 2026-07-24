@@ -1,0 +1,111 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "krack-frag-probe"
+version = "1.0.0"
+description = "Educational lab-only regression tester for long-patched Wi-Fi KRACK/FragAttacks-style edge cases"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "krack-frag-probe contributors" },
+]
+keywords = [
+    "wifi",
+    "802.11",
+    "regression-testing",
+    "educational",
+    "lab-only",
+    "krack",
+    "fragattacks",
+    "defensive",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Education",
+    "Topic :: Security",
+    "Topic :: System :: Networking",
+    "Typing :: Typed",
+]
+dependencies = [
+    "scapy>=2.5.0",
+    "rich>=13.0.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+    "types-setuptools",
+]
+html = []
+gui = []
+
+[project.urls]
+Homepage = "https://github.com/example/krack-frag-probe"
+Documentation = "https://github.com/example/krack-frag-probe/tree/main/docs"
+Repository = "https://github.com/example/krack-frag-probe"
+Issues = "https://github.com/example/krack-frag-probe/issues"
+Changelog = "https://github.com/example/krack-frag-probe/blob/main/CHANGELOG.md"
+Security = "https://github.com/example/krack-frag-probe/blob/main/SECURITY.md"
+
+[project.scripts]
+krack-frag-probe = "krack_frag_probe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+krack_frag_probe = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+mypy_path = "src"
+packages = ["krack_frag_probe"]
+
+[[tool.mypy.overrides]]
+module = ["scapy.*", "rich.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --strict-markers"
+markers = [
+    "unit: pure unit tests (no hardware)",
+    "integration: integration tests (mocked, no live injection)",
+]
+
+[tool.coverage.run]
+source = ["krack_frag_probe"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

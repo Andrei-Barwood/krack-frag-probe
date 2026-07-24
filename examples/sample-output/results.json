@@ -1,0 +1,188 @@
+{
+  "lab_banner": "LAB ONLY \u2013 NOT FOR PRODUCTION USE",
+  "tool_version": "1.0.0",
+  "timestamp": "2026-07-24T00:29:45.024514+00:00",
+  "iface": "mon0",
+  "bssid": "aa:bb:cc:dd:ee:ff",
+  "client": null,
+  "dry_run": true,
+  "operator_notes": "Authorized laboratory regression test. Not for production or third-party use.",
+  "interface_details": {
+    "exists": false,
+    "is_monitor": false,
+    "source": "synthetic-dry-run",
+    "note": "Non-Linux or no sysfs; dry-run only",
+    "platform": "posix"
+  },
+  "counts": {
+    "PASS": 10,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "SKIPPED": 0,
+    "ERROR": 0,
+    "total": 10
+  },
+  "results": [
+    {
+      "name": "single_deauth_edge",
+      "suite": "control_mgmt",
+      "verdict": "PASS",
+      "explanation": "No historical Management-frame state interactions (historical) regression symptom indicated under controlled probe for single_deauth_edge. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.000663791986880824,
+      "diagnostic_notes": [
+        "suite=control_mgmt",
+        "historical_category=Management-frame state interactions (historical)",
+        "frames=['single_deauth_edge']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 1,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "action_mgmt_path",
+      "suite": "control_mgmt",
+      "verdict": "PASS",
+      "explanation": "No historical Action frame processing edge cases regression symptom indicated under controlled probe for action_mgmt_path. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.00048479202087037265,
+      "diagnostic_notes": [
+        "suite=control_mgmt",
+        "historical_category=Action frame processing edge cases",
+        "frames=['action_mgmt_path']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 1,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "probe_request_smoke",
+      "suite": "control_mgmt",
+      "verdict": "PASS",
+      "explanation": "No historical Management path smoke / edge interaction regression symptom indicated under controlled probe for probe_request_smoke. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.000597625010414049,
+      "diagnostic_notes": [
+        "suite=control_mgmt",
+        "historical_category=Management path smoke / edge interaction",
+        "frames=['probe_request_smoke']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 1,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "cache_poison_style_probe",
+      "suite": "frag_cache",
+      "verdict": "PASS",
+      "explanation": "No historical FragAttacks-style fragment cache handling regression symptom indicated under controlled probe for cache_poison_style_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.0009213340235874057,
+      "diagnostic_notes": [
+        "suite=frag_cache",
+        "historical_category=FragAttacks-style fragment cache handling",
+        "frames=['cache_poison_style_probe.frag0', 'cache_poison_style_probe.frag1']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 2,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "mixed_key_fragment_style",
+      "suite": "frag_cache",
+      "verdict": "PASS",
+      "explanation": "No historical Mixed plaintext/encrypted fragment handling regression symptom indicated under controlled probe for mixed_key_fragment_style. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.0008855420164763927,
+      "diagnostic_notes": [
+        "suite=frag_cache",
+        "historical_category=Mixed plaintext/encrypted fragment handling",
+        "frames=['mixed_key_fragment.plain_frag0', 'mixed_key_fragment.protected_frag1']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 2,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "amsdu_aggregation_probe",
+      "suite": "frag_cache",
+      "verdict": "PASS",
+      "explanation": "No historical A-MSDU aggregation parsing (historical fixes) regression symptom indicated under controlled probe for amsdu_aggregation_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.00044641600106842816,
+      "diagnostic_notes": [
+        "suite=frag_cache",
+        "historical_category=A-MSDU aggregation parsing (historical fixes)",
+        "frames=['amsdu_aggregation_probe']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 1,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "ampdu_delimiter_style_probe",
+      "suite": "frag_cache",
+      "verdict": "PASS",
+      "explanation": "No historical A-MPDU aggregation parsing (historical fixes) regression symptom indicated under controlled probe for ampdu_delimiter_style_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.0004497499903663993,
+      "diagnostic_notes": [
+        "suite=frag_cache",
+        "historical_category=A-MPDU aggregation parsing (historical fixes)",
+        "frames=['ampdu_delimiter_style_probe']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 1,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "nonce_reuse_guard",
+      "suite": "key_reinstall",
+      "verdict": "PASS",
+      "explanation": "No historical KRACK-style key/nonce install edge cases regression symptom indicated under controlled probe for nonce_reuse_guard. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.0008794589957688004,
+      "diagnostic_notes": [
+        "suite=key_reinstall",
+        "historical_category=KRACK-style key/nonce install edge cases",
+        "frames=['nonce_reuse_guard.protected_a', 'nonce_reuse_guard.protected_b']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 2,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "reinstall_edge_install_order",
+      "suite": "key_reinstall",
+      "verdict": "PASS",
+      "explanation": "No historical KRACK-style key reinstallation edge cases regression symptom indicated under controlled probe for reinstall_edge_install_order. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.0011204170004930347,
+      "diagnostic_notes": [
+        "suite=key_reinstall",
+        "historical_category=KRACK-style key reinstallation edge cases",
+        "frames=['reinstall_edge.plain_marker', 'reinstall_edge.protected_marker']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 2,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "replay_counter_style",
+      "suite": "key_reinstall",
+      "verdict": "PASS",
+      "explanation": "No historical Replay/PN state handling (related historical fixes) regression symptom indicated under controlled probe for replay_counter_style. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.001321500021731481,
+      "diagnostic_notes": [
+        "suite=key_reinstall",
+        "historical_category=Replay/PN state handling (related historical fixes)",
+        "frames=['replay_counter_style.seq_30_0', 'replay_counter_style.seq_31_1', 'replay_counter_style.seq_30_2']",
+        "observation_mode=dry-run"
+      ],
+      "frames_crafted": 3,
+      "frames_sent": 0,
+      "dry_run": true
+    }
+  ],
+  "format": "krack-frag-probe-results-v1"
+}

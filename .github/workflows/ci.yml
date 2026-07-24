@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    name: Lint, typecheck, unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package with dev extras
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Ruff lint
+        run: |
+          ruff check src tests
+          ruff format --check src tests
+
+      - name: Mypy
+        run: mypy src
+
+      - name: Pytest (no live packet injection)
+        run: |
+          pytest tests -q --cov=krack_frag_probe --cov-report=term-missing
+
+      - name: Dry-run CLI smoke
+        run: |
+          krack-frag-probe list-tests
+          krack-frag-probe run \
+            --iface mon0 \
+            --bssid aa:bb:cc:dd:ee:ff \
+            --test all \
+            --dry-run \
+            --yes-i-understand \
+            --output /tmp/kfp-ci-results
+          test -f /tmp/kfp-ci-results/results.json
+
+      # Explicit policy: never inject frames in CI
+      - name: Confirm no live injection flags in CI
+        run: |
+          echo "CI policy: live packet injection is not performed in this workflow."

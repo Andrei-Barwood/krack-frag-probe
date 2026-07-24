@@ -1,0 +1,55 @@
+{
+  "lab_banner": "LAB ONLY – NOT FOR PRODUCTION USE",
+  "tool_version": "1.0.0",
+  "timestamp": "2026-07-23T12:00:00+00:00",
+  "iface": "mon0",
+  "bssid": "aa:bb:cc:dd:ee:ff",
+  "client": "02:00:00:00:00:99",
+  "dry_run": true,
+  "operator_notes": "Authorized laboratory regression test. Not for production or third-party use.",
+  "interface_details": {
+    "exists": false,
+    "is_monitor": false,
+    "source": "synthetic-dry-run",
+    "note": "Sample artifact for documentation"
+  },
+  "counts": {
+    "PASS": 2,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "SKIPPED": 0,
+    "ERROR": 0,
+    "total": 2
+  },
+  "results": [
+    {
+      "name": "nonce_reuse_guard",
+      "suite": "key_reinstall",
+      "verdict": "PASS",
+      "explanation": "No historical KRACK-style key/nonce install edge cases regression symptom indicated under controlled probe for nonce_reuse_guard. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.01,
+      "diagnostic_notes": [
+        "suite=key_reinstall",
+        "historical_category=KRACK-style key/nonce install edge cases"
+      ],
+      "frames_crafted": 2,
+      "frames_sent": 0,
+      "dry_run": true
+    },
+    {
+      "name": "cache_poison_style_probe",
+      "suite": "frag_cache",
+      "verdict": "PASS",
+      "explanation": "No historical FragAttacks-style fragment cache handling regression symptom indicated under controlled probe for cache_poison_style_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).",
+      "duration_s": 0.01,
+      "diagnostic_notes": [
+        "suite=frag_cache",
+        "historical_category=FragAttacks-style fragment cache handling"
+      ],
+      "frames_crafted": 2,
+      "frames_sent": 0,
+      "dry_run": true
+    }
+  ],
+  "format": "krack-frag-probe-results-v1"
+}

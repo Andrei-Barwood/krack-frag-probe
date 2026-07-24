@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.venv/
+venv/
+.env
+.python-version
+
+# Test / type / lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Lab outputs (local)
+kfp-results/
+lab-results/
+lab-results-*/
+*.pcap
+*.pcapng
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Packaging
+pip-wheel-metadata/

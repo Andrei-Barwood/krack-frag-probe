@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>krack-frag-probe Lab Report</title>
+  <style>
+:root { --bg: #0f1419; --fg: #e7ecf1; --muted: #8b9bab; --card: #1a2332;
+        --pass: #3dd68c; --fail: #f07178; --inc: #ffcc66; --err: #ff8f40;
+        --banner: #5c1a1a; --accent: #59c2ff; }
+* { box-sizing: border-box; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+       background: var(--bg); color: var(--fg); margin: 0; padding: 0 0 3rem; line-height: 1.5; }
+.banner { background: var(--banner); color: #fff; padding: 1rem 1.5rem; font-weight: 700;
+          text-align: center; border-bottom: 3px solid #f07178; letter-spacing: 0.02em; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+.sub { color: var(--muted); margin-bottom: 1.5rem; }
+.card { background: var(--card); border-radius: 10px; padding: 1rem 1.25rem;
+        margin-bottom: 1rem; border: 1px solid #2a3544; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid #2a3544; }
+th { color: var(--muted); font-weight: 600; font-size: 0.85rem; }
+.badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px;
+         font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; }
+.PASS { background: rgba(61,214,140,.15); color: var(--pass); }
+.FAIL { background: rgba(240,113,120,.15); color: var(--fail); }
+.INCONCLUSIVE { background: rgba(255,204,102,.15); color: var(--inc); }
+.SKIPPED { background: rgba(139,155,171,.15); color: var(--muted); }
+.ERROR { background: rgba(255,143,64,.15); color: var(--err); }
+.meta { color: var(--muted); font-size: 0.9rem; }
+footer { color: var(--muted); font-size: 0.85rem; margin-top: 2rem; text-align: center; }
+code { background: #0b1016; padding: 0.1rem 0.35rem; border-radius: 4px; color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="banner">LAB ONLY – NOT FOR PRODUCTION USE · NOT AN EXPLOIT REPORT</div>
+  <div class="wrap">
+    <h1>krack-frag-probe Lab Report</h1>
+    <p class="sub">Educational regression results for long-patched Wi-Fi edge cases.
+    Authorized laboratory use only.</p>
+
+    <div class="card">
+      <h2>Run metadata</h2>
+      <table>
+        <tr><th>Timestamp (UTC)</th><td><code>2026-07-24T00:29:45.024514+00:00</code></td></tr>
+        <tr><th>Tool version</th><td><code>1.0.0</code></td></tr>
+        <tr><th>Interface</th><td><code>mon0</code></td></tr>
+        <tr><th>Target BSSID</th><td><code>aa:bb:cc:dd:ee:ff</code></td></tr>
+        <tr><th>Client MAC</th><td><code>—</code></td></tr>
+        <tr><th>Dry-run</th><td><code>True</code></td></tr>
+        <tr><th>Interface details</th><td class="meta">{&#x27;exists&#x27;: False, &#x27;is_monitor&#x27;: False, &#x27;source&#x27;: &#x27;synthetic-dry-run&#x27;, &#x27;note&#x27;: &#x27;Non-Linux or no sysfs; dry-run only&#x27;, &#x27;platform&#x27;: &#x27;posix&#x27;}</td></tr>
+      </table>
+      <p class="meta">Authorized laboratory regression test. Not for production or third-party use.</p>
+    </div>
+
+    <div class="card">
+      <h2>Summary</h2>
+      <table>
+        <tr>
+          <th>Total</th><th>PASS</th><th>FAIL</th><th>INCONCLUSIVE</th><th>SKIPPED</th><th>ERROR</th>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>10</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Per-test results</h2>
+      <table>
+        <tr>
+          <th>Test</th><th>Verdict</th><th>Duration</th><th>Crafted/Sent</th>
+          <th>Explanation</th><th>Diagnostics</th>
+        </tr>
+        
+            <tr>
+              <td><code>control_mgmt.single_deauth_edge</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>1/0</td>
+              <td>No historical Management-frame state interactions (historical) regression symptom indicated under controlled probe for single_deauth_edge. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=control_mgmt</code></li><li><code>historical_category=Management-frame state interactions (historical)</code></li><li><code>frames=[&#x27;single_deauth_edge&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>control_mgmt.action_mgmt_path</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.000s</td>
+              <td>1/0</td>
+              <td>No historical Action frame processing edge cases regression symptom indicated under controlled probe for action_mgmt_path. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=control_mgmt</code></li><li><code>historical_category=Action frame processing edge cases</code></li><li><code>frames=[&#x27;action_mgmt_path&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>control_mgmt.probe_request_smoke</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>1/0</td>
+              <td>No historical Management path smoke / edge interaction regression symptom indicated under controlled probe for probe_request_smoke. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=control_mgmt</code></li><li><code>historical_category=Management path smoke / edge interaction</code></li><li><code>frames=[&#x27;probe_request_smoke&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>frag_cache.cache_poison_style_probe</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>2/0</td>
+              <td>No historical FragAttacks-style fragment cache handling regression symptom indicated under controlled probe for cache_poison_style_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=frag_cache</code></li><li><code>historical_category=FragAttacks-style fragment cache handling</code></li><li><code>frames=[&#x27;cache_poison_style_probe.frag0&#x27;, &#x27;cache_poison_style_probe.frag1&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>frag_cache.mixed_key_fragment_style</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>2/0</td>
+              <td>No historical Mixed plaintext/encrypted fragment handling regression symptom indicated under controlled probe for mixed_key_fragment_style. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=frag_cache</code></li><li><code>historical_category=Mixed plaintext/encrypted fragment handling</code></li><li><code>frames=[&#x27;mixed_key_fragment.plain_frag0&#x27;, &#x27;mixed_key_fragment.protected_frag1&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>frag_cache.amsdu_aggregation_probe</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.000s</td>
+              <td>1/0</td>
+              <td>No historical A-MSDU aggregation parsing (historical fixes) regression symptom indicated under controlled probe for amsdu_aggregation_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=frag_cache</code></li><li><code>historical_category=A-MSDU aggregation parsing (historical fixes)</code></li><li><code>frames=[&#x27;amsdu_aggregation_probe&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>frag_cache.ampdu_delimiter_style_probe</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.000s</td>
+              <td>1/0</td>
+              <td>No historical A-MPDU aggregation parsing (historical fixes) regression symptom indicated under controlled probe for ampdu_delimiter_style_probe. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=frag_cache</code></li><li><code>historical_category=A-MPDU aggregation parsing (historical fixes)</code></li><li><code>frames=[&#x27;ampdu_delimiter_style_probe&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>key_reinstall.nonce_reuse_guard</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>2/0</td>
+              <td>No historical KRACK-style key/nonce install edge cases regression symptom indicated under controlled probe for nonce_reuse_guard. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=key_reinstall</code></li><li><code>historical_category=KRACK-style key/nonce install edge cases</code></li><li><code>frames=[&#x27;nonce_reuse_guard.protected_a&#x27;, &#x27;nonce_reuse_guard.protected_b&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>key_reinstall.reinstall_edge_install_order</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>2/0</td>
+              <td>No historical KRACK-style key reinstallation edge cases regression symptom indicated under controlled probe for reinstall_edge_install_order. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=key_reinstall</code></li><li><code>historical_category=KRACK-style key reinstallation edge cases</code></li><li><code>frames=[&#x27;reinstall_edge.plain_marker&#x27;, &#x27;reinstall_edge.protected_marker&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+            <tr>
+              <td><code>key_reinstall.replay_counter_style</code></td>
+              <td><span class="badge PASS">PASS</span></td>
+              <td>0.001s</td>
+              <td>3/0</td>
+              <td>No historical Replay/PN state handling (related historical fixes) regression symptom indicated under controlled probe for replay_counter_style. Stack handling consistent with expected post-patch behavior (dry-run craft OK).</td>
+              <td class="meta"><ul><li><code>suite=key_reinstall</code></li><li><code>historical_category=Replay/PN state handling (related historical fixes)</code></li><li><code>frames=[&#x27;replay_counter_style.seq_30_0&#x27;, &#x27;replay_counter_style.seq_31_1&#x27;, &#x27;replay_counter_style.seq_30_2&#x27;]</code></li><li><code>observation_mode=dry-run</code></li></ul></td>
+            </tr>
+            
+      </table>
+    </div>
+
+    <footer>
+      krack-frag-probe · defensive educational regression tester ·
+      LAB ONLY – NOT FOR PRODUCTION USE · no zero-day claims
+    </footer>
+  </div>
+</body>
+</html>
