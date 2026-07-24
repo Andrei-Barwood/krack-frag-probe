@@ -1,4 +1,7 @@
-"""Result models: per-test verdicts and run summaries."""
+"""Result models: per-test verdicts and run summaries.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+"""
 
 from __future__ import annotations
 
@@ -6,6 +9,8 @@ from dataclasses import asdict, dataclass, field
 from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Any, ClassVar
+
+from krack_frag_probe import AUTHOR_FULL, __author__, __author_gurmukhi__
 
 
 class Verdict(StrEnum):
@@ -56,6 +61,9 @@ class RunSummary:
     results: list[TestResult] = field(default_factory=list)
     lab_banner: str = "LAB ONLY – NOT FOR PRODUCTION USE"
     tool_version: str = "1.0.0"
+    author: str = AUTHOR_FULL
+    author_romanized: str = __author__
+    author_gurmukhi: str = __author_gurmukhi__
     operator_notes: str = (
         "Authorized laboratory regression test. Not for production or third-party use."
     )
@@ -79,6 +87,9 @@ class RunSummary:
             client=client,
             dry_run=dry_run,
             tool_version=tool_version,
+            author=AUTHOR_FULL,
+            author_romanized=__author__,
+            author_gurmukhi=__author_gurmukhi__,
             interface_details=interface_details or {},
         )
 
@@ -110,6 +121,9 @@ class RunSummary:
         return {
             "lab_banner": self.lab_banner,
             "tool_version": self.tool_version,
+            "author": self.author,
+            "author_romanized": self.author_romanized,
+            "author_gurmukhi": self.author_gurmukhi,
             "timestamp": self.timestamp,
             "iface": self.iface,
             "bssid": self.bssid,

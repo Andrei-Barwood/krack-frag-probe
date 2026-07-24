@@ -2,6 +2,8 @@
 
 Every path that could transmit frames displays the legal warning and requires
 acknowledgement. Live runs refuse non-monitor interfaces and missing targets.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
 """
 
 from __future__ import annotations
@@ -16,7 +18,7 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from krack_frag_probe import LAB_ONLY_BANNER, __version__
+from krack_frag_probe import AUTHOR_FULL, LAB_ONLY_BANNER, __version__
 from krack_frag_probe.core.interface import ensure_interface_ready
 from krack_frag_probe.core.results import RunSummary, Verdict
 from krack_frag_probe.core.tester import TestContext
@@ -47,6 +49,8 @@ edge cases. It is [bold]not[/bold] an exploit kit.
 
 You must only target equipment [bold]you own[/bold] or have
 [bold]written permission[/bold] to test.
+
+[dim]Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)[/dim]
 """
 
 
@@ -59,7 +63,7 @@ def _print_banner(console: Console) -> None:
         Panel(
             BANNER_TEXT,
             title="krack-frag-probe",
-            subtitle=f"v{__version__}",
+            subtitle=f"v{__version__} · {AUTHOR_FULL}",
             border_style="red",
         )
     )
@@ -70,10 +74,15 @@ def _print_banner(console: Console) -> None:
     context_settings={"help_option_names": ["-h", "--help"]},
     help=(
         "Educational lab-only regression tester for long-patched Wi-Fi edge cases "
-        "(KRACK/FragAttacks style). AUTHORIZED LABORATORY USE ONLY."
+        "(KRACK/FragAttacks style). AUTHORIZED LABORATORY USE ONLY. "
+        "Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)."
     ),
 )
-@click.version_option(__version__, prog_name="krack-frag-probe")
+@click.version_option(
+    __version__,
+    prog_name="krack-frag-probe",
+    message=f"%(prog)s, version %(version)s\nAuthor: {AUTHOR_FULL}",
+)
 @click.option("--verbose", "-v", is_flag=True, help="Verbose logging.")
 @click.option("--json", "json_mode", is_flag=True, help="JSON-lines logging on stderr.")
 @click.option("--no-color", is_flag=True, help="Disable ANSI colors.")

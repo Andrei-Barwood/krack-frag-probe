@@ -4,6 +4,8 @@
 Opens a generated HTML or Markdown report in a simple Tkinter window or the
 system browser. Marked experimental — not required for core CLI use.
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 Usage:
     python scripts/generate_report_viewer.py ./kfp-results/report.html
     python scripts/generate_report_viewer.py ./kfp-results/report.md --browser
@@ -21,7 +23,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
             "EXPERIMENTAL: view krack-frag-probe lab reports locally. "
-            "LAB ONLY – NOT FOR PRODUCTION USE."
+            "LAB ONLY – NOT FOR PRODUCTION USE. "
+            "Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)."
         )
     )
     parser.add_argument("path", type=Path, help="Path to report.html or report.md")

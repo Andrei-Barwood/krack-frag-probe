@@ -1,5 +1,7 @@
 # Laboratory setup guide
 
+**Author / ਲੇਖਕ:** **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 > **AUTHORIZED LABORATORY USE ONLY.**  
 > Configure monitor mode and RF isolation **only** for equipment you own or have
 > written permission to test. Never point this tool at production or third-party

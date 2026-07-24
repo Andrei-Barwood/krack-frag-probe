@@ -1,4 +1,7 @@
-"""Module entry point: ``python -m krack_frag_probe``."""
+"""Module entry point: ``python -m krack_frag_probe``.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+"""
 
 from __future__ import annotations
 

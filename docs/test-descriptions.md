@@ -1,5 +1,7 @@
 # Test descriptions (high level)
 
+**Author / ਲੇਖਕ:** **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 > Educational regression checks only. Names refer to **historical issue
 > categories**, not working exploits.
 

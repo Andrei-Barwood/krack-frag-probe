@@ -298,9 +298,22 @@ Requires a desktop Python with Tkinter. Marked **experimental**.
 
 ---
 
+## Author / ਲੇਖਕ
+
+| Script | Name |
+| ------ | ---- |
+| **Romanized** | **Kirtan Teg Singh** |
+| **Gurmukhi (ਗੁਰਮੁਖੀ)** | **ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ** |
+
+See [AUTHORS.md](AUTHORS.md) for full attribution.
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+Copyright © 2026 **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
 
 The license does **not** grant permission to violate the law. Authorized lab use
 only.
@@ -308,6 +321,8 @@ only.
 ---
 
 ## Acknowledgments
+
+**krack-frag-probe** is authored by **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
 
 Historical public research on key reinstallation (KRACK) and fragmentation
 attacks (FragAttacks) informed the *categories* of regression checks. This

@@ -1,4 +1,7 @@
-"""Optional HTML report with basic styling and lab-only banner."""
+"""Optional HTML report with basic styling and lab-only banner.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+"""
 
 from __future__ import annotations
 
@@ -77,13 +80,17 @@ def render_html(summary: RunSummary) -> str:
   <div class="wrap">
     <h1>krack-frag-probe Lab Report</h1>
     <p class="sub">Educational regression results for long-patched Wi-Fi edge cases.
-    Authorized laboratory use only.</p>
+    Authorized laboratory use only.<br/>
+    Author / ਲੇਖਕ: <strong>{html.escape(summary.author_romanized)}</strong>
+    (<strong>{html.escape(summary.author_gurmukhi)}</strong>)</p>
 
     <div class="card">
       <h2>Run metadata</h2>
       <table>
         <tr><th>Timestamp (UTC)</th><td><code>{html.escape(summary.timestamp)}</code></td></tr>
         <tr><th>Tool version</th><td><code>{html.escape(summary.tool_version)}</code></td></tr>
+        <tr><th>Author (romanized)</th><td><code>{html.escape(summary.author_romanized)}</code></td></tr>
+        <tr><th>Author (Gurmukhi / ਗੁਰਮੁਖੀ)</th><td><code>{html.escape(summary.author_gurmukhi)}</code></td></tr>
         <tr><th>Interface</th><td><code>{html.escape(summary.iface)}</code></td></tr>
         <tr><th>Target BSSID</th><td><code>{html.escape(summary.bssid)}</code></td></tr>
         <tr><th>Client MAC</th><td><code>{html.escape(summary.client or "—")}</code></td></tr>
@@ -123,6 +130,7 @@ def render_html(summary: RunSummary) -> str:
 
     <footer>
       krack-frag-probe · defensive educational regression tester ·
+      Author: {html.escape(summary.author)} ·
       LAB ONLY – NOT FOR PRODUCTION USE · no zero-day claims
     </footer>
   </div>

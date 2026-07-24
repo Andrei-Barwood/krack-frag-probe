@@ -1,4 +1,7 @@
-"""Human-readable Markdown report generation."""
+"""Human-readable Markdown report generation.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+"""
 
 from __future__ import annotations
 
@@ -20,6 +23,8 @@ def render_markdown(summary: RunSummary) -> str:
         "> Authorized laboratory regression testing only. Not an exploit report.",
         "> Do not use against production networks or third-party equipment without",
         "> written authorization.",
+        ">",
+        f"> **Author / ਲੇਖਕ:** {summary.author_romanized} ({summary.author_gurmukhi})",
         "",
         "## Run metadata",
         "",
@@ -27,6 +32,8 @@ def render_markdown(summary: RunSummary) -> str:
         "| ----- | ----- |",
         f"| Timestamp (UTC) | `{summary.timestamp}` |",
         f"| Tool version | `{summary.tool_version}` |",
+        f"| Author (romanized) | `{summary.author_romanized}` |",
+        f"| Author (Gurmukhi / ਗੁਰਮੁਖੀ) | `{summary.author_gurmukhi}` |",
         f"| Interface | `{summary.iface}` |",
         f"| Target BSSID | `{summary.bssid}` |",
         f"| Client MAC | `{summary.client or '—'}` |",
@@ -78,6 +85,7 @@ def render_markdown(summary: RunSummary) -> str:
             "- This report documents **regression probes** for long-patched behaviors.",
             "- It is **not** evidence of a new vulnerability or zero-day.",
             "- **LAB ONLY – NOT FOR PRODUCTION USE.**",
+            f"- **Author / ਲੇਖਕ:** {summary.author_romanized} ({summary.author_gurmukhi})",
             "",
         ]
     )

@@ -1,5 +1,7 @@
 """Wireless interface handling for Linux mac80211 monitor mode.
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 Hard-coded safety: refuse live injection unless the interface exists and is
 in monitor mode. Dry-run may proceed with a synthetic interface description.
 """

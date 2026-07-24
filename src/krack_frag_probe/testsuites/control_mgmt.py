@@ -1,5 +1,7 @@
 """Control and management frame edge-case regression tests (educational).
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 Historical key-install and fragmentation issues sometimes interacted with
 management/control processing (state machines, buffering). These probes use
 **single** benign management frames — never floods, never automated targeting

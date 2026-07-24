@@ -1,5 +1,7 @@
 # Ethics and warnings
 
+**Author / ਲੇਖਕ:** **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 ## Mission
 
 **krack-frag-probe** exists to help researchers, educators, and vendors verify

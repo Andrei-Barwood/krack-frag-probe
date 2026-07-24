@@ -1,5 +1,7 @@
 """Input validation and mandatory legal acknowledgement gates.
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 All executable paths that could send frames must call
 :func:`require_legal_acknowledgement` and supply an explicit target MAC.
 """

@@ -1,5 +1,7 @@
 """Test orchestration: run regression suites with safe send/observe paths.
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 Live transmission uses Scapy ``sendp`` only after:
   1. Legal acknowledgement
   2. Explicit iface + BSSID validation

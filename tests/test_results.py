@@ -98,6 +98,8 @@ def test_markdown_contains_banner() -> None:
     assert "LAB ONLY" in md
     assert "nonce_reuse_guard" in md
     assert "**PASS**" in md or "PASS" in md
+    assert "Kirtan Teg Singh" in md
+    assert "ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ" in md
 
 
 @pytest.mark.unit
@@ -105,7 +107,18 @@ def test_html_contains_banner(tmp_path: Path) -> None:
     html = render_html(_sample_summary())
     assert "LAB ONLY" in html
     assert "nonce_reuse_guard" in html
+    assert "Kirtan Teg Singh" in html
+    assert "ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ" in html
     path = write_html_report(_sample_summary(), tmp_path / "r.html")
     assert path.is_file()
     write_markdown_report(_sample_summary(), tmp_path / "r.md")
     assert (tmp_path / "r.md").is_file()
+
+
+@pytest.mark.unit
+def test_author_metadata_in_summary() -> None:
+    s = _sample_summary()
+    d = s.to_dict()
+    assert d["author_romanized"] == "Kirtan Teg Singh"
+    assert d["author_gurmukhi"] == "ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ"
+    assert "Kirtan Teg Singh" in d["author"]

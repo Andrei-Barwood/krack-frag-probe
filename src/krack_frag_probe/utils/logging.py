@@ -1,4 +1,7 @@
-"""Structured logging: human-readable console + optional JSON lines."""
+"""Structured logging: human-readable console + optional JSON lines.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+"""
 
 from __future__ import annotations
 

@@ -1,5 +1,7 @@
 """Minimal educational 802.11 frame construction.
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 IMPORTANT
 ---------
 Frames built here are **synthetic regression probes**, not exploit chains.

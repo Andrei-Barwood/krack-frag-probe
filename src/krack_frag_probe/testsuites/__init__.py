@@ -1,5 +1,7 @@
 """Registry of modular regression test suites.
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 All suites are educational checks for long-patched behaviors.
 """
 

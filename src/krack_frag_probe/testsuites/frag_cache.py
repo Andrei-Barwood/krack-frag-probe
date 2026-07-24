@@ -1,5 +1,7 @@
 """Fragmentation / aggregation cache regression tests (educational).
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 Related to historical FragAttacks-class issues around fragment caches,
 A-MSDU parsing, and aggregation handling. These tests craft **minimal**
 benign fragments and aggregation-style payloads with clear lab markers.

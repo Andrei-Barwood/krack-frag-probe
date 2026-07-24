@@ -1,5 +1,7 @@
 # Architecture
 
+**Author / ਲੇਖਕ:** **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 ## Design principles
 
 1. **Safety before features** — legal ack, explicit targets, monitor-mode gate.

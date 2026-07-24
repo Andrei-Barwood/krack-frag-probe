@@ -37,7 +37,8 @@ If you discover a vulnerability **in krack-frag-probe itself** (e.g. unsafe
 defaults, path traversal in report generation, privilege issues):
 
 1. **Do not** open a public GitHub issue.
-2. Email the maintainers at: `security@example.invalid` (replace with project contact when published).
+2. Email the maintainers / author (**Kirtan Teg Singh** / **ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**)
+   at: `security@example.invalid` (replace with project contact when published).
 3. Include: description, reproduction steps, impact, and suggested fix if known.
 4. Allow reasonable time for a fix before public disclosure.
 

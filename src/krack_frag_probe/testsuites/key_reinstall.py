@@ -1,5 +1,7 @@
 """Key-reinstallation *style* regression tests (educational).
 
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+
 These checks relate to historical KRACK-class issues around key install
 ordering and nonce/PN handling. They do **not** implement the public KRACK
 attacks, complete handshake hijacks, or force nonce reset on a victim.

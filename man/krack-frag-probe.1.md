@@ -43,9 +43,13 @@ See `krack-frag-probe run --help`.
 - 1 — one or more failures  
 - 2 — configuration or permission error  
 
+## AUTHOR
+
+**Kirtan Teg Singh** (romanized) / **ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ** (Gurmukhi / ਗੁਰਮੁਖੀ).
+
 ## SEE ALSO
 
-docs/lab-setup.md, docs/ethics-and-warnings.md, SECURITY.md
+docs/lab-setup.md, docs/ethics-and-warnings.md, SECURITY.md, AUTHORS.md
 
 ## BUGS
 

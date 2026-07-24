@@ -7,11 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2026-07-23
 
+Author: **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 ### Added
 
 - Initial public release of **krack-frag-probe**, an educational lab-only
   regression tester for long-patched Wi-Fi edge cases (KRACK-style key
-  reinstallation and FragAttacks-style fragmentation/aggregation handling).
+  reinstallation and FragAttacks-style fragmentation/aggregation handling),
+  by **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
 - CLI entry points: `krack-frag-probe` and `python -m krack_frag_probe`.
 - Subcommands: `list-tests`, `run`, `report`, `acknowledge` helpers via run flow.
 - Mandatory legal acknowledgement (`I UNDERSTAND AND ACCEPT`) before any

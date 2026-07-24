@@ -10,7 +10,7 @@ readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
 authors = [
-    { name = "krack-frag-probe contributors" },
+    { name = "Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)" },
 ]
 keywords = [
     "wifi",

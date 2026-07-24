@@ -1,6 +1,9 @@
 {
   "lab_banner": "LAB ONLY – NOT FOR PRODUCTION USE",
   "tool_version": "1.0.0",
+  "author": "Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)",
+  "author_romanized": "Kirtan Teg Singh",
+  "author_gurmukhi": "ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ",
   "timestamp": "2026-07-23T12:00:00+00:00",
   "iface": "mon0",
   "bssid": "aa:bb:cc:dd:ee:ff",

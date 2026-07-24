@@ -1,5 +1,7 @@
 # Contributor Covenant Code of Conduct
 
+Project author / ਲੇਖਕ: **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 ## Our pledge
 
 We as members, contributors, and leaders pledge to make participation in our

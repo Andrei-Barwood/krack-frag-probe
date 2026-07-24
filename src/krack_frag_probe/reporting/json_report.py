@@ -1,4 +1,7 @@
-"""Machine-readable JSON results."""
+"""Machine-readable JSON results.
+
+Author: Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)
+"""
 
 from __future__ import annotations
 
@@ -54,6 +57,9 @@ def summary_from_dict(data: dict[str, Any]) -> RunSummary:
         results=results,
         lab_banner=str(data.get("lab_banner", "LAB ONLY – NOT FOR PRODUCTION USE")),
         tool_version=str(data.get("tool_version", "")),
+        author=str(data.get("author", "Kirtan Teg Singh (ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ)")),
+        author_romanized=str(data.get("author_romanized", "Kirtan Teg Singh")),
+        author_gurmukhi=str(data.get("author_gurmukhi", "ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ")),
         operator_notes=str(data.get("operator_notes", "")),
         interface_details=dict(data.get("interface_details") or {}),
     )

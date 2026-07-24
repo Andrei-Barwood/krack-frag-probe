@@ -2,6 +2,8 @@
 
 Thank you for helping improve this **educational, lab-only** regression tester.
 
+**Author / ਲੇਖਕ:** **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**). See [AUTHORS.md](AUTHORS.md).
+
 ## Before you contribute
 
 1. Read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md).

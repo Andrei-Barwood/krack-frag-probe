@@ -1,5 +1,7 @@
 # Sample lab run
 
+**Author / ਲੇਖਕ:** **Kirtan Teg Singh** (**ਕੀਰਤਨ ਤੇਗ ਸਿੰਘ**).
+
 > **LAB ONLY.** Replace MACs with devices you own.
 
 ## 1. Dry-run (no RF)
